@@ -1,0 +1,14 @@
+<article *ngFor="let post of postList">
+  <div class="post-title p-3">
+    <h2>{{ post?.title }}</h2>
+    <p>{{ post?.body }}</p>
+  </div>
+  <div class="post-detail-page p-3 d-flex justify-content-between">
+    <div>
+      <span>Author: </span>
+      <a routerLink="/posts" [queryParams]="{userId: post?.userId}" class="btn btn-light" 
+        [innerHtml]="post?.userId"></a>
+    </div>
+    <a [routerLink]="['/posts', post?.id]" class="btn btn-light">Читать подробнее...</a>
+  </div>
+</article>

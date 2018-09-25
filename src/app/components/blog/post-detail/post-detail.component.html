@@ -1,0 +1,14 @@
+<article>
+  <div class="post-title p-3">
+    <h1>{{ post?.title }}</h1>
+    <span>Author: {{ post?.userId }}</span>
+    <p>{{ post?.body}}</p>
+  </div>
+  <div>
+    <h5>Comments ( {{ comments?.length }} ):</h5>
+    <div class="com-container" *ngFor="let comment of comments">
+      <div>Author: <strong>{{ comment?.email }}</strong></div>
+      <div>{{ comment?.body }}</div>
+    </div>
+  </div>
+</article>
