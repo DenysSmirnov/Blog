@@ -19,7 +19,7 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-      this.postService.getSinglePost(+params.id).pipe(take(1)).subscribe((data: any) => {
+      this.postService.getSinglePost(params.id).pipe(take(1)).subscribe((data: any) => {
         this.post = data;
       });
       this.postService.getComments(params.id).pipe(take(1)).subscribe((data: Array<any>) => {
